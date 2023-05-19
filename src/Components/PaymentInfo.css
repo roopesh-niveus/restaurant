@@ -1,0 +1,17 @@
+.payment-info {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .payment-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .payment-option input {
+    margin-right: 5px;
+  }
+  

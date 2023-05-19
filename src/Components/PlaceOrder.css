@@ -1,0 +1,53 @@
+.place-order-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .order-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .order-table th,
+  .order-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .order-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .order-table td.description {
+    width: 55%;
+  }
+  
+  .order-table td.quantity,
+  .order-table td.price,
+  .order-table td.total {
+    width: 15%;
+  }
+  
+  .order-summary {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .order-summary .total-label {
+    font-weight: bold;
+  }
+  
+  .order-summary .total-value {
+    font-size: 20px;
+    color: #ff4500;
+    margin-top: 10px;
+  }
+  
+  .place-order-button {
+    margin-top: 20px;
+  }
+  

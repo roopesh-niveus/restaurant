@@ -1,0 +1,35 @@
+.cart-container {
+    text-align: center;
+  }
+  
+  .cart-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+  }
+  
+  .item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .food-price {
+    font-weight: bold;
+  }
+  
+  .item-description {
+    margin-bottom: 10px;
+  }
+  
+  .quantity {
+    margin-top: 10px;
+  }
+  
+  .place-order-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
