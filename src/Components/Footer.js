@@ -17,10 +17,10 @@ export default function Footer() {
           <Col>
             <h5>Contact Us</h5>
             <p>
-              123 Main Street
-              <br /> Anytown, USA 12345
-              <br /> Phone: (555) 555-1234
-              <br /> Email: info@myfoodapp.com
+              1Bayar Padav
+              <br /> Opposite to Bank of Baroda
+              <br /> Phone: (+91) 9988776655
+              <br /> Email: infomyfoodapp@gmail.com
             </p>
           </Col>
           <Col>

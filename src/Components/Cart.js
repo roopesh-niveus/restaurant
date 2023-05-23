@@ -8,20 +8,28 @@ const Cart = ({ cartItems, removeFromCart, setOrders }) => {
   const [orderPlaced, setOrderPlaced] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
 
+  useEffect(() => {
+    const calculateTotalPrice = () => {
+      let totalPrice = 0;
+      for (const item of cartItems) {
+        totalPrice += item.food.price * item.quantity;
+      }
+      return totalPrice;
+    };
+
+    setTotalPrice(calculateTotalPrice());
+
+    return () => {
+      // Cleanup logic here (equivalent to componentWillUnmount)
+    };
+  }, [cartItems]);
+
   const handlePlaceOrder = () => {
     setShowPlaceOrder(true);
   };
 
   const handleCancelOrder = () => {
     setShowPlaceOrder(false);
-  };
-
-  const calculateTotalPrice = () => {
-    let totalPrice = 0;
-    for (const item of cartItems) {
-      totalPrice += item.food.price * item.quantity;
-    }
-    return totalPrice;
   };
 
   const handleConfirmOrder = () => {
@@ -32,28 +40,26 @@ const Cart = ({ cartItems, removeFromCart, setOrders }) => {
         status: "Placed",
       };
     });
-  
+
     setOrders((prevOrders) => [...prevOrders, ...newOrders]);
     setOrderPlaced(true);
-  
+
     setTimeout(() => {
       setOrders((prevOrders) => {
         const updatedOrders = prevOrders.map((order) => {
-          if (newOrders.some((newOrder) => newOrder.cartItems[0] === order.cartItems[0])) {
+          if (
+            newOrders.some(
+              (newOrder) => newOrder.cartItems[0] === order.cartItems[0]
+            )
+          ) {
             return { ...order, status: "Delivered" };
           }
           return order;
         });
         return updatedOrders;
       });
-    }, 1 * 60 * 1000); // 1 minutes (1 * 60 seconds * 1000 milliseconds)
+    }, 1 * 60 * 1000); // 1 minute (1 * 60 seconds * 1000 milliseconds)
   };
-  
-  
-
-  useEffect(() => {
-    setTotalPrice(calculateTotalPrice());
-  }, [cartItems]);
 
   useEffect(() => {
     if (orderPlaced) {

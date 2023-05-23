@@ -8,6 +8,7 @@ function Restaurant({ handleRestaurantClick, selectedRestaurantId }) {
     { id: 3, name: "Restaurant C" },
   ];
 
+
   return (
     <div>
       <h2>List of Restaurants</h2>

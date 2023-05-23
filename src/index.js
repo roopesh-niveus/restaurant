@@ -10,7 +10,7 @@ import FoodList from "./Components/FoodList";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const App = () => {
+const Root = () => {
   const [cartItems, setCartItems] = React.useState([]);
   const [selectedRestaurantId, setSelectedRestaurantId] = React.useState(null);
   const [orders, setOrders] = React.useState([]);
@@ -92,4 +92,4 @@ const App = () => {
   );
 };
 
-createRoot(document.getElementById("root")).render(<App />);
+createRoot(document.getElementById("root")).render(<Root />);

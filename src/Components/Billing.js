@@ -13,14 +13,15 @@ const Billing = () => {
   });
 
   useEffect(() => {
-    // Retrieve the billing address from localStorage
     const storedBillingAddress = localStorage.getItem("billingAddress");
-
-    // If the billing address is stored, parse and set it in the state
     if (storedBillingAddress) {
       setBillingAddress(JSON.parse(storedBillingAddress));
     }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("billingAddress", JSON.stringify(billingAddress));
+  }, [billingAddress]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,9 +33,7 @@ const Billing = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Store the billing address in localStorage
-    localStorage.setItem("billingAddress", JSON.stringify(billingAddress));
+    // Form submission logic here
   };
 
   return (
